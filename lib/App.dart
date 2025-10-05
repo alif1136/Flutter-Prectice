@@ -2,6 +2,7 @@ import 'package:alif/Button.dart';
 import 'package:alif/Grid_View.dart';
 import 'package:alif/List_and_Others.dart';
 import 'package:alif/Stack.dart';
+import 'package:alif/alert.dart';
 //import 'package:alif/Home%20page.dart';
 import 'package:flutter/material.dart';
 import 'package:alif/home.dart';
@@ -19,7 +20,8 @@ class myapp extends StatelessWidget{
       //home: button(),
       //home: Home(),
       //home: Grid_View(),
-      home: Stack_View(),
+      //home: Stack_View(),
+      home: alert(),
     );
   }
 }
