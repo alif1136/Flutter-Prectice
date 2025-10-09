@@ -107,24 +107,41 @@ class List_and_others extends StatelessWidget {
       //     // )
       //   ],
       // ),
-        body: ListView.separated(
-            itemCount: 10,
-            itemBuilder: (context,index) {
-              return Card(
-                child: ListTile(
-                  leading: Icon(Icons.phone),
-                  trailing: Icon(Icons.delete, color: Colors.black,),
-                  title: Text('Alif $index'),
-                  subtitle: Text('01964082626'),
+
+      body: ListView.separated(
+        itemCount: 11, // 1 extra for the TextField
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            // Return the TextField at the top
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Search',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.search),
                 ),
-              );
-            },
-            separatorBuilder: (context,index) {
-              return Divider(
-                  thickness: 4,
-              );
-            },
-        ),
+              ),
+            );
+          }
+
+          // Adjust the index for the rest of the items
+          final itemIndex = index - 1;
+
+          return Card(
+            child: ListTile(
+              leading: Icon(Icons.phone),
+              trailing: Icon(Icons.delete, color: Colors.black),
+              title: Text('Alif $itemIndex'),
+              subtitle: Text('01964082626'),
+            ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return Divider(thickness: 4);
+        },
+      ),
+
       // body: ListView.builder(
       //   //scrollDirection: Axis.horizontal,
       //   itemCount: 30,

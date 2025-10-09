@@ -5,6 +5,7 @@ class alert extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size screensize = MediaQuery.of(context).size;
     void showAlert(){
       showDialog(context: context, builder: (context){
         return AlertDialog(
@@ -150,9 +151,33 @@ void showSnackBar(){
         backgroundColor: Colors.amberAccent,
       ),
       body: Center(
+        child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text('Text Theme',
+          style: //TextStyle(color: Colors.lightGreenAccent),
+            Theme.of(context).textTheme.bodyLarge,
+          ),
+          SizedBox(height: 10,),
+          TextField(),
+          Container(
+            color: Colors.lightGreenAccent,
+            height: 200,
+            width: 200,
+          ),
+          SizedBox(height: 10,),
+          Container(
+            color: Colors.deepPurple,
+            height: screensize.width,
+            width: screensize.height,
+          ),
+          SizedBox(height: 10,),
+          Text('this is Text',
+          style: TextStyle(
+            fontSize: screensize.width > 600 ? 32 : 18
+          ),
+          ),
           ElevatedButton(onPressed: (){
             showAlert();
           },
@@ -182,6 +207,7 @@ void showSnackBar(){
           },
               child: Text('SnackBar'))
         ],
+      ),
       ),
       ),
     );
