@@ -21,8 +21,9 @@ class Navigation_Test extends StatelessWidget {
              ElevatedButton(onPressed: (){
             //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Page_2()));
              //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Page_2()),(route)=>false);
-               Navigator.push
-               (context, MaterialPageRoute(builder: (context)=>Page_2()));
+             //   Navigator.push
+             //   (context, MaterialPageRoute(builder: (context)=>Page_2()));
+               Navigator.pushNamed(context, '/home');
             },
                 child: Text('Page-2')),
             SizedBox(height: 20,),

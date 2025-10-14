@@ -1,9 +1,12 @@
 import 'package:alif/Button.dart';
+import 'package:alif/City_widget/City_Wgt.dart';
 import 'package:alif/Grid_View.dart';
 import 'package:alif/List_and_Others.dart';
+import 'package:alif/Navigation_Test.dart';
 import 'package:alif/Stack.dart';
 import 'package:alif/Tab_and_Drawer.dart';
 import 'package:alif/alert.dart';
+import 'package:alif/bottom_navigation.dart';
 //import 'package:alif/Home%20page.dart';
 import 'package:flutter/material.dart';
 import 'package:alif/home.dart';
@@ -71,6 +74,13 @@ class myapp extends StatelessWidget{
       //home: Stack_View(),
       //home: alert(),
       home: tab_and_drawer(),
+      initialRoute: '/bottom_navigation',
+      //home: Navigation_Test(name: ''),
+      routes:  {
+        '/home' : (context)=> City_Widget(img: '', title: '', rating: '',),
+        '/home-2' : (context)=>alert(),
+        '/bottom_navigation': (context)=> bottom_navigation(),
+      },
     );
   }
 }
