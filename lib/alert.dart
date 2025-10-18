@@ -83,7 +83,7 @@ class alert extends StatelessWidget {
         },
       );
     }
-void showBottomSheet(){
+    void showBottomSheet(){
       showModalBottomSheet(context: context, builder: (context)=>Container(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -109,7 +109,7 @@ void showBottomSheet(){
         ),
       ));
 }
-void showCustomDialog(){
+    void showCustomDialog(){
       showDialog(context: context, builder: (context)=>Dialog(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -125,7 +125,7 @@ void showCustomDialog(){
         ),
       ));
 }
-void showLoadingDialog(){
+    void showLoadingDialog(){
       showDialog(context: context, builder: (context)=>Dialog(
         child: Padding(padding: const EdgeInsets.all(20.0),
         child: Row(
@@ -139,7 +139,7 @@ void showLoadingDialog(){
       )
       );
 }
-void showSnackBar(){
+    void showSnackBar(){
       ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('This is a SnackBar'))
   );
